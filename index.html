@@ -13,10 +13,9 @@
       var shopeeAff = currentUrl.searchParams.get("shopeeAff");
       var affLink = 'https://fast.accesstrade.com.vn/deep_link/4724097529828107456?url=';
       if (shopeeAff) {
-          var affLink = 'https://shopee.prf.hn/click/camref:1100lf843/adref:/pubref:/destination:';
+          affLink = 'https://shopee.prf.hn/click/camref:1100lf843/adref:/pubref:/destination:';
       }
       var appExt = currentUrl.searchParams.get("ext");
-
       var redirect_to = affLink + urlRedirect;
       if (appExt) {
           window.location.href = redirect_to;
