@@ -18,7 +18,9 @@
       var appExt = currentUrl.searchParams.get("ext");
       var redirect_to = affLink + urlRedirect;
       if (appExt) {
-          window.location.href = redirect_to;
+          let indexCode = urlRedirect.lastIndexOf('-i.');
+          let code = urlRedirect.slice(indexCode);
+          window.location.href = 'https://shopee.vn/universal-link/p' + code + '?utm_source=an_17171860000&utm_medium=affiliates&utm_campaign=&utm_content=sellervn-55543801';
       }
       var wait_time =  5;
       var wait_seconds = 5000;
