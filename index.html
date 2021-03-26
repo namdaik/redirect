@@ -12,12 +12,9 @@
       var urlRedirect = currentUrl.searchParams.get("url");
       var shopeeAff = currentUrl.searchParams.get("shopeeAff");
       var affLink = 'https://fast.accesstrade.com.vn/deep_link/4724097529828107456?url=';
-      if (shopeeAff) {
-          affLink = 'https://shopee.prf.hn/click/camref:1100lf843/adref:/pubref:/destination:';
-      }
       var appExt = currentUrl.searchParams.get("ext");
       var redirect_to = affLink + urlRedirect;
-      if (appExt) {
+      if (appExt && urlRedirect.indexOf('https://shopee.vn') !== -1) { 
           let indexCode = urlRedirect.lastIndexOf('-i.');
           let code = urlRedirect.slice(indexCode);
           window.location.href = 'https://shopee.vn/universal-link/p' + code + '?utm_source=an_17171860000&utm_medium=affiliates&utm_campaign=&utm_content=sellervn-55543801';
