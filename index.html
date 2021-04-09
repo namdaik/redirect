@@ -19,6 +19,9 @@
           let code = urlRedirect.slice(indexCode);
           window.location.href = 'https://shopee.vn/universal-link/p' + code + '?utm_source=an_17171860000&utm_medium=affiliates&utm_campaign=&utm_content=sellervn-55543801';
       }
+       if (appExt && urlRedirect.indexOf('https://tiki.vn') !== -1) { 
+          window.location.href = urlRedirect;
+      }
        window.location.href = redirect_to;
        
       var wait_time =  appExt ? 0 : 5 ;
