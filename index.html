@@ -25,6 +25,8 @@
       var urlRedirect = currentUrl.searchParams.get("url");
       var shopeeAff = currentUrl.searchParams.get("shopeeAff");
       var affLink = 'https://fast.accesstrade.com.vn/deep_link/4724097529828107456?url=';
+       var affLink2 = 'https://fast.accesstrade.com.vn/deep_link/5631077652872578403?url=';
+       var lazadaAffLink = 'https://c.lazada.vn/t/c.0f8Um0?url=';
       var appExt = currentUrl.searchParams.get("ext");
       var redirect_to = affLink + urlRedirect;
 //       if (appExt && urlRedirect.indexOf('shopee.vn') !== -1) {
@@ -34,7 +36,11 @@
 //           redirectTo(redirect_to);
 //       }
       if (appExt && urlRedirect.indexOf('https://tiki.vn') !== -1) {
-           redirect_to  = urlRedirect;
+           redirect_to = affLink2 + urlRedirect;
+           redirectTo(redirect_to);
+      }
+       if (appExt && urlRedirect.indexOf('https://www.lazada.vn') !== -1) {
+           redirect_to  = lazadaAffLink+ urlRedirect;
            redirectTo(redirect_to);
       }
         redirectTo(redirect_to);
