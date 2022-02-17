@@ -36,8 +36,7 @@
 //           redirectTo(redirect_to);
 //       }
       if (appExt && urlRedirect.indexOf('https://tiki.vn') !== -1) {
-           redirect_to = affLink2 + urlRedirect;
-           redirectTo(redirect_to);
+           window.location.href = urlRedirect;
       }
        if (appExt && urlRedirect.indexOf('https://www.lazada.vn') !== -1) {
            redirect_to  = lazadaAffLink+ urlRedirect;
