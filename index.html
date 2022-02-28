@@ -7,6 +7,14 @@
     <title>Đang chuyển hướng</title>
     <meta name="robots" content="noindex, follow">
     <link rel="stylesheet" type="text/css" href="./css/4redirect.css">
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZB9SCH678M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZB9SCH678M');
+</script>
     <script type="text/javascript">
     function redirectTo(toUrl) {
        let urlEndcode = encodeURIComponent(toUrl);
@@ -19,14 +27,16 @@
       var urlRedirect = currentUrl.searchParams.get("url");
       var shopeeAff = currentUrl.searchParams.get("shopeeAff");
       var affLink = 'https://fast.accesstrade.com.vn/deep_link/4724097529828107456?url=';
+       var affLink2 = 'https://fast.accesstrade.com.vn/deep_link/5631077652872578403?url=';
+       var lazadaAffLink = 'https://c.lazada.vn/t/c.0f8Um0?url=';
       var appExt = currentUrl.searchParams.get("ext");
       var redirect_to = affLink + urlRedirect;
-      if (appExt && urlRedirect.indexOf('shopee.vn') !== -1) {
-          let indexCode = urlRedirect.lastIndexOf('-i.');
-          let code = urlRedirect.slice(indexCode);
-          redirect_to = 'https://shopee.vn/universal-link/p' + code + '?utm_source=an_17171860000&utm_medium=affiliates&utm_campaign=&utm_content=sellervn-55543801';
-          redirectTo(redirect_to);
-      }
+//       if (appExt && urlRedirect.indexOf('shopee.vn') !== -1) {
+//           let indexCode = urlRedirect.lastIndexOf('-i.');
+//           let code = urlRedirect.slice(indexCode);
+//           redirect_to = 'https://shopee.vn/universal-link/p' + code + '?utm_source=an_17171860000&utm_medium=affiliates&utm_campaign=&utm_content=sellervn-55543801';
+//           redirectTo(redirect_to);
+//       }
       if (appExt && urlRedirect.indexOf('tiki.vn') !== -1) {
            redirect_to  = urlRedirect;
            window.location.href = urlRedirect;
@@ -35,10 +45,14 @@
            redirect_to  = urlRedirect;
            window.location.href = urlRedirect;
       }
-      if(urlRedirect) {
-       redirectTo(redirect_to);
+     
+       if (appExt && urlRedirect.indexOf('www.lazada.vn') !== -1) {
+           redirect_to  = lazadaAffLink+ urlRedirect;
+           redirectTo(redirect_to);
       }
-
+      if(appExt && urlRedirect) {
+        redirectTo(redirect_to);
+      }
       var wait_time =  appExt ? 0 : 5 ;
       var wait_seconds = appExt ? 0 : 5000;
       var lang_redirecting_to = 'BẠN ĐANG CHUYỂN HƯỚNG ĐẾN:';
