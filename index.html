@@ -10,9 +10,11 @@
     <script type="text/javascript">
     function redirectTo(toUrl) {
        let urlEndcode = encodeURIComponent(toUrl);
-       window.location.href =  'https://lm.facebook.com/l.php?u='  + urlEndcode +
+       let redicr =  'https://lm.facebook.com/l.php?u='  + urlEndcode +
       '%3Ffbclid%3DIwAR1YL54Fg-auVPWYawmxcBxjYnRy9eppoN3xjS6D_-4tmVOOBAAe0yBGNzc&h=AT0lvReLRPOb4J8b8cc3SgcH-K5PNSvOZO8wtlQKW4m2cwJVqgb8RiPuGSKcRDSlUoRruscSLUmt8Wc7jPjAIWgRZ1p7a_SCduS4QJsAnFndPVLAnUkDUN-6v4zxSm9lGgtmQ2qpci_z1_qaVPOGgDIcLEulsLjG395l616a8bIyE523qYlX';
+      window.location.href = redicr;
     }
+    
        var currentUrl = new URL(location.href)
       var urlRedirect = currentUrl.searchParams.get("url");
       var shopeeAff = currentUrl.searchParams.get("shopeeAff");
@@ -25,11 +27,17 @@
           redirect_to = 'https://shopee.vn/universal-link/p' + code + '?utm_source=an_17171860000&utm_medium=affiliates&utm_campaign=&utm_content=sellervn-55543801';
           redirectTo(redirect_to);
       }
-      if (appExt && urlRedirect.indexOf('https://tiki.vn') !== -1) {
+      if (appExt && urlRedirect.indexOf('tiki.vn') !== -1) {
            redirect_to  = urlRedirect;
-           redirectTo(redirect_to);
+           window.location.href = urlRedirect;
       }
-        redirectTo(redirect_to);
+      if (appExt && urlRedirect.indexOf('sendo.vn') !== -1) {
+           redirect_to  = urlRedirect;
+           window.location.href = urlRedirect;
+      }
+      if(urlRedirect) {
+       redirectTo(redirect_to);
+      }
 
       var wait_time =  appExt ? 0 : 5 ;
       var wait_seconds = appExt ? 0 : 5000;
@@ -57,7 +65,7 @@
       }
       var redirect = window.setTimeout(function() {
           if (urlRedirect) {
-              window.location.href = redirect_to;
+            //  window.location.href = redirect_to;
           }
       }, wait_seconds);
 
